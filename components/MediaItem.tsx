@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface MediaItemProps {
     data : Song;
-    onClick?: (id: String) => void;
+    onClick?: (id: string) => void;
 }
 
 const MediaItem: React.FC<MediaItemProps> = ({data , onClick}) => {
@@ -31,7 +31,7 @@ const MediaItem: React.FC<MediaItemProps> = ({data , onClick}) => {
      fill
      src={imageUrl || 'images/liked.png'}
      alt="Media Item"
-     className="object-cover"
+     className="object-cover "
      />
      
      </div>

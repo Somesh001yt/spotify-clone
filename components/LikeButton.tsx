@@ -54,12 +54,11 @@ const LikeButton: React.FC<LikeButtonProps> = ({
     }
 
     if (isLiked) {
-      console.log(isLiked)
       const { error } = await supabaseClient
         .from('liked_songs')
         .delete()
-        .eq('user_id', user.id) 
-        .eq('song_id', songId);
+        .eq('user_id', user.id)
+        .eq('song_id', songId)
 
       if (error) {
         toast.error(error.message);
