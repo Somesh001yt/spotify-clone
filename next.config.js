@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         domains : [
-        "https://iplekewqxzhitijngchh.supabase.co" 
+        "iplekewqxzhitijngchh.supabase.co" 
         ]
     }
 }

@@ -56,7 +56,7 @@ const UploadModal = () => {
    data : songData ,
    error : songError
   } = await supabaseClient.storage.from('songs')
-  .upload(`songs-${values.title}-${uniqid}`, songFile, {
+  .upload(`song-${values.title}-${uniqueId}`, songFile, {
     cacheControl:'3600',
     upsert:false
   })
@@ -71,7 +71,7 @@ const UploadModal = () => {
    data : imageData ,
    error : imageError
   } = await supabaseClient.storage.from('images')
-  .upload(`images-${values.title}-${uniqid}`, imageFile, {
+  .upload(`image-${values.title}-${uniqueId}`, imageFile, {
     cacheControl:'3600',
     upsert:false
   })
@@ -81,7 +81,7 @@ const UploadModal = () => {
     return toast.error("Failed image upload")
   }
 
-  const {error : supabaseError} = await supabaseClient.from('songes').insert({
+  const {error : supabaseError} = await supabaseClient.from('songs').insert({
     user_id: user.id,
     title:values.title,
     author: values.author,
